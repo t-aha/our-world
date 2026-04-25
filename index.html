@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our World - Houston Jam Band | Live Music & Psychedelic Rock</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Our World is a Houston-based jam band specializing in psychedelic rock, funk, and improvisational live music. Experience unforgettable performances and sonic journeys with Houston's premier jam band.">
+    <meta name="keywords" content="jam band, Houston jam band, jam band Houston, psychedelic rock Houston, live music Houston, improvisation, funk band Houston, Houston music, Texas jam band, live jam sessions">
+    <meta name="author" content="Our World Band">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://https://ourworld.band/">
+    <meta property="og:title" content="Our World - Houston Jam Band | Live Music & Psychedelic Rock">
+    <meta property="og:description" content="Houston's premier jam band creating improvised psychedelic rock, funk, and experimental soundscapes. Every show is a unique musical journey.">
+    <meta property="og:image" content="https://yourwebsite.com/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://https://ourworld.band/">
+    <meta property="twitter:title" content="Our World - Houston Jam Band">
+    <meta property="twitter:description" content="Houston's premier jam band creating improvised psychedelic rock, funk, and experimental soundscapes.">
+    <meta property="twitter:image" content="https://yourwebsite.com/og-image.jpg">
+    
+    <!-- Structured Data for Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Our World",
+        "genre": ["Jam Band", "Psychedelic Rock", "Funk", "Improvisation"],
+        "description": "Houston-based jam band specializing in psychedelic rock and improvised live performances",
+        "url": "https://ourworld.band",
+        "location": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Houston",
+                "addressRegion": "TX",
+                "addressCountry": "US"
+            }
+        },
+        "sameAs": [
+            "https://www.instagram.com/our_world_houston",
+            "https://www.facebook.com/profile.php?id=61561851163423"
+        ]
+    }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Bebas+Neue&family=Source+Sans+3:wght@300;400;600&family=Notable&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #FF6B35;
+            --secondary: #F7931E;
+            --accent: #FDC500;
+            --dark: #1A1A2E;
+            --light: #EAEAEA;
+            --purple: #9B59B6;
+            --teal: #16A085;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            color: var(--light);
+            background: var(--dark);
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            transform: translateY(-100%);
+            animation: slideDown 0.6s ease-out 0.5s forwards;
+        }
+
+        @keyframes slideDown {
+            to { transform: translateY(0); }
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        a {
+            color: var(--light);
+        }
+
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            width: 100%;
+            max-width: none !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        /* Override section::before for hero */
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(155, 89, 182, 0.35);
+            z-index: 2;
+            pointer-events: none;
+            transform: none !important;
+        }
+        
+        #hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 107, 53, 0.25);
+            mix-blend-mode: multiply;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        #hero-image,
+        #hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+            z-index: 1;
+        }
+
+        #hero-image {
+            animation: kenBurns 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes kenBurns {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            opacity: 0;
+            animation: fadeInScale 1.2s ease-out 0.3s forwards;
+            width: 100%;
+            max-width: 100vw;
+            padding: 0 2rem;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .band-name {
+            font-family: "Notable", system-ui;
+            font-size: clamp(3rem, 10vw, 10rem);
+            color: white;
+            text-transform: uppercase;
+            text-shadow: 
+                3px 3px 0px #000,
+                6px 6px 0px rgba(0, 0, 0, 0.8),
+                9px 9px 0px rgba(0, 0, 0, 0.6),
+                12px 12px 0px rgba(0, 0, 0, 0.4),
+                15px 15px 0px rgba(0, 0, 0, 0.2),
+                -2px -2px 0px #000,
+                2px -2px 0px #000,
+                -2px 2px 0px #000,
+                0 0 40px rgba(255, 255, 255, 0.5);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .tagline {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--light);
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        .scroll-indicator::before {
+            content: '↓';
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        .hero-social {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .hero-social a {
+            padding: 20px;
+            font-size: 30px;
+            width: 70px;
+            height: 70px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+            color: white;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-social a:hover {
+            opacity: 0.7;
+            transform: scale(1.1) translateY(-5px);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            text-align: center;
+            margin-bottom: 3rem;
+            margin-top: 1rem;
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 3px;
+        }
+
+        /* About Section */
+        #about {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(155, 89, 182, 0.1));
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: center;
+            color: var(--light);
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Media Section */
+        #media {
+            background: var(--dark);
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .media-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .media-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.3);
+            border-color: var(--primary);
+        }
+
+        .media-item img,
+        .media-item video {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .media-item audio {
+            width: 100%;
+            padding: 1rem;
+        }
+
+        .media-caption {
+            padding: 1rem;
+            font-size: 1rem;
+            color: var(--light);
+            text-align: center;
+        }
+
+        /* Shows Section */
+        #shows {
+            background: linear-gradient(135deg, rgba(22, 160, 133, 0.1), rgba(155, 89, 182, 0.1));
+        }
+
+        .show-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .show-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .show-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-left-color: var(--accent);
+            transform: translateX(10px);
+        }
+
+        .show-date {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: var(--accent);
+            text-align: center;
+            min-width: 80px;
+        }
+
+        .show-details h3 {
+            font-size: 1.5rem;
+            color: var(--light);
+            margin-bottom: 0.5rem;
+        }
+
+        .show-location {
+            color: var(--teal);
+            font-size: 1.1rem;
+        }
+
+        .show-btn {
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .show-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Merch Section */
+        #merch {
+            background: var(--dark);
+        }
+
+        .merch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .merch-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .merch-item:hover {
+            transform: translateY(-10px) rotate(-1deg);
+            border-color: var(--accent);
+        }
+
+        .merch-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, var(--primary), var(--purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .merch-info {
+            padding: 1.5rem;
+        }
+
+        .merch-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--light);
+        }
+
+        .merch-price {
+            color: var(--accent);
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .coming-soon {
+            text-align: center;
+            font-size: 1.3rem;
+            color: var(--teal);
+            margin-top: 2rem;
+            font-style: italic;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(22, 160, 133, 0.1));
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: var(--light);
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 20px rgba(255, 107, 53, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            padding: 1.2rem 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 2rem;
+            text-align: center;
+            color: var(--light);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: var(--light);
+            font-size: 1.5rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+            transform: scale(1.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .show-item {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .show-date {
+                margin-bottom: 1rem;
+            }
+        }
+
+        /* Placeholder for hero image */
+        .placeholder-hero {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1A1A2E 0%, #16A085 50%, #9B59B6 100%);
+            position: relative;
+        }
+
+        .placeholder-hero::after {
+            content: 'Replace with your band image';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 1.5rem;
+            text-align: center;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#media">Media</a></li>
+            <li><a href="#shows">Shows</a></li>
+            <li><a href="#merch">Merch</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <!-- Video Background - Replace with your video file -->
+        <video id="hero-video" autoplay muted loop playsinline>
+            <source src="VoC00008 (2).mp4" type="video/mp4">
+            <source src="your-video.webm" type="video/webm">
+            <!-- Fallback to image if video doesn't load -->
+            <div class="placeholder-hero"></div>
+        </video>
+        <div class="hero-content">
+            <p class="tagline">WELCOME TO</p>
+            <h1 class="band-name">OUR WORLD</h1>
+            <sub class="tagline">Houston, TX</sub>
+        </div>
+        <div class="hero-social">
+            <a href="https://www.instagram.com/our_world_houston" target="_blank" rel="noopener" aria-label="Instagram" class="fa">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61561851163423" target="_blank" rel="noopener" aria-label="Facebook" class="fa">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="mailto:ourworldhouston@gmail.com" aria-label="Email" class="fa">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://www.youtube.com/@OurWorld-the-band" aria-label="YouTube" class="fa">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <p>Our World is bringing the jam band scene to Houston, seamlessly blending psychedelic rock, country, funk, blues, and trance.</p>
+             <img src="media/ourworld.jpg" alt="Band Photo" width="70%%">
+            <p>Our sound is inspired from bands such as Phish, moe., SCI, Goose, Pink Floyd, the Dead, Spafford, Moses Guest, Widespread Panic, Blues Traveler and more.</p>
+        </div>
+    </section>
+
+    <!-- Media Section -->
+    <section id="media">
+        <h2>Media</h2>
+        <div class="media-grid">
+            <!-- Example Photo -->
+            
+            <!-- Example Video -->
+            <div class="media-item">
+                <video controls>
+                    <source src="media/sqeaky clean.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="media-caption">Practice Session Jams - "Squeaky Clean"</div>
+            </div>
+
+            <div class="media-item">
+                <audio controls>
+                    <source src="media/state.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <div class="media-caption">State of the Art - Jim James (Our World cover)</div>
+            </div>
+
+            <!-- Example Audio -->
+            <div class="media-item">
+                <audio controls>
+                    <source src="media/HowDoes.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <div class="media-caption">How Does It Feel - Moses Guest (Our World cover)</div>
+            </div>
+
+            <!-- Example Audio -->
+            <div class="media-item">
+                <audio controls>
+                    <source src="media/Opium.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <div class="media-caption">Opium - moe. (Our World cover)</div>
+            </div>
+
+            <div class="media-item">
+                <audio controls>
+                    <source src="media/drive.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <div class="media-caption">Drive - Goose (Our World cover)</div>
+            </div>
+
+             <!-- Example Audio -->
+            <div class="media-item">
+                <audio controls>
+                    <source src="media/Houdini.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <div class="media-caption">Houdini - Dua Lipa (Our World cover)</div>
+            </div>
+
+            <div class="media-item">
+                <audio controls>
+                    <source src="media/southdew.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <div class="media-caption">Southern Dew - New Monsoon (Our World cover)</div>
+            </div>
+
+            <div class="media-item">
+                <audio controls>
+                    <source src="media/hungersite.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <div class="media-caption">Hungersite - Goose (Our World cover)</div>
+            </div>
+
+            <!-- Add more media items as needed -->
+        </div>
+    </section>
+
+    <!-- Shows Section -->
+    <section id="shows">
+        <h2>Upcoming Shows</h2>
+        <div class="show-list">
+            <div class="show-item">
+                <div class="show-date">
+                    <div>MAY</div>
+                    <div>23</div>
+                </div>
+                <div class="show-details">
+                    <h3>Franklin's Tower</h3>
+                    <div class="show-location">4307 Treaschwig Rd, Spring, TX 77373</div>
+                    <p><b>Free Show   |   Starts 7 PM</b></p>
+                </div>
+                <a href="https://www.franklinstower.xyz/" class="show-btn">Site</a>
+            </div>
+            <div style="display: flex; justify-content: center; align-items: center;">
+    <img src="media/franklins tower 20260523.png" alt="Live Performance" width="75%">
+</div><br><br>
+            <div class="show-item">
+                <div class="show-date">
+                    <div>JUN</div>
+                    <div>6</div>
+                </div>
+                <div class="show-details">
+                    <h3>The Back Pew Brewery</h3>
+                    <div class="show-location">26452 Sorters McClellan Rd, Porter, TX 77365</div>
+                    <p><b>Free Show   |   Starts 2 PM</b></p>
+                </div>
+                <a href="https://www.backpewbrewing.com/events/" class="show-btn">Site</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Merch Section
+    <section id="merch">
+        <h2>Merch</h2>
+        <div class="merch-grid">
+            <div class="merch-item">
+                <div class="merch-image">👕</div>
+                <div class="merch-info">
+                    <h3>Tour T-Shirt</h3>
+                    <div class="merch-price">$30</div>
+                </div>
+            </div>
+
+            <div class="merch-item">
+                <div class="merch-image">🎵</div>
+                <div class="merch-info">
+                    <h3>Vinyl Record</h3>
+                    <div class="merch-price">$35</div>
+                </div>
+            </div>
+
+            <div class="merch-item">
+                <div class="merch-image">🧢</div>
+                <div class="merch-info">
+                    <h3>Snapback Hat</h3>
+                    <div class="merch-price">$25</div>
+                </div>
+            </div>
+
+            <div class="merch-item">
+                <div class="merch-image">📀</div>
+                <div class="merch-info">
+                    <h3>Live Album CD</h3>
+                    <div class="merch-price">$15</div>
+                </div>
+            </div>
+        </div>
+        <p class="coming-soon">Online store coming soon!</p>
+    </section> -->
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <p style="text-align:center">We are looking for videographers and lighting technicians. If you have interest or experience and want to be a part of our project, please reach out.</p><br>
+        <p style="text-align:center">For bookings and any and all other queries, please fill out the form below or email us directly at <a href="mailto:ourworldhouston@gmail.com">ourworldhouston@gmail.com</a>.</p><br><br>
+        <div class="contact-container">
+            <form class="contact-form" action="https://formspree.io/f/mwvrjwrg" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://www.instagram.com/our_world_houston" target="_blank" rel="noopener" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61561851163423" target="_blank" rel="noopener" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.youtube.com/@OurWorld-the-band" target="_blank" rel="noopener" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+        <p>&copy; 2026 Our World. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Slow down the hero video playback
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroVideo = document.getElementById('hero-video');
+            if (heroVideo) {
+                // Set playback rate to 50% speed (0.5)
+                // You can adjust this value: 0.25 = 25% speed, 0.5 = 50% speed, 0.75 = 75% speed
+                heroVideo.playbackRate = 0.5;
+            }
+        });
+    </script>
+</body>
+</html>
